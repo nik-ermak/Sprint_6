@@ -67,3 +67,7 @@ class MainPage(BasePage):
     @allure.step('Проверка отображения заголовка главной страницы')
     def checking_display_of_main_header(self):
         return self.checking_display_an_element(LPM.main_header)
+
+    @allure.step('Проверка титульника Дзена')
+    def get_title_page_dzen(self):
+        self.get_page_title(LPM.title_page)

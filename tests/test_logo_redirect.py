@@ -1,9 +1,9 @@
 import allure
 import pytest
 
-from cURL import main_page
-from conftest import driver
+from curl import main_page
 from page_objects.main_page import MainPage
+from test_data import TestData as TD
 
 class TestLogoRedirect:
     @allure.title('Проверка перехода на страницу Дзена при клике на лого Яндекс')
@@ -12,8 +12,7 @@ class TestLogoRedirect:
         main_page.wait_on_logo_yandex_header()
         main_page.click_on_logo_yandex_header()
         main_page.switch_to_next_tab()
-        assert main_page.get_page_title() == ('Дзен — платформа для просмотра и создания контента. '
-                                              'Вы всегда найдёте здесь то, что подходит именно вам: сотни тысяч авторов ежедневно делятся постами, статьями, видео и короткими роликами')
+        assert main_page.get_title_page_dzen() == TD.dzen_title_page
 
     @allure.title('Проверка перехода на главную страницу по клику на лого Самокат')
     def test_logo_redirect_to_main_page_success(self, driver):

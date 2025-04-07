@@ -2,7 +2,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
-from cURL import main_page
+from curl import main_page
 
 # фикстура веб-драйвера
 @pytest.fixture(scope="function")

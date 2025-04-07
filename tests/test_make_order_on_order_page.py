@@ -1,7 +1,6 @@
 import allure
 import pytest
 
-from conftest import driver
 from test_data import TestData as TD
 
 from page_objects.order_page import OrderPage
